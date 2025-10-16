@@ -399,9 +399,9 @@ Session::enable_dump (std::string arg)
 void
 Session::handle_input_files (int num_files, const char **files)
 {
+  static const char *stdin_file[] = {"-"};
   if (num_files == 0)
     {
-      static const char *stdin_file[] = {"-"};
       files = stdin_file;
       num_files = 1;
     }

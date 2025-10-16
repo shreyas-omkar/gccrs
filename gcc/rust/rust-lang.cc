@@ -285,7 +285,7 @@ grs_langhook_handle_option (
 
 /* Run after parsing options.  */
 static bool
-grs_langhook_post_options (const char **pfilename ATTRIBUTE_UNUSED)
+grs_langhook_post_options (const char **pfilename)
 {
   // can be used to override other options if required
 
