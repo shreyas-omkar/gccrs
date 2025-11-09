@@ -282,9 +282,12 @@ grs_langhook_handle_option (
 
 /* Run after parsing options.  */
 static bool
-grs_langhook_post_options (const char **pfilename ATTRIBUTE_UNUSED)
+grs_langhook_post_options (const char **pfilename)
 {
   // can be used to override other options if required
+
+  if (!*pfilename && num_in_fnames == 0)
+    *pfilename = "-";
 
   // satisfies an assert in init_excess_precision in toplev.cc
   if (flag_excess_precision /*_cmdline*/ == EXCESS_PRECISION_DEFAULT)
